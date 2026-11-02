@@ -1,0 +1,19 @@
+<h2>{{ employee.first_name }} {{ employee.last_name }}</h2>
+<h2>{{ employee.email }}</h2>
+<h2>{{ employee.designation }}</h2>
+<h2>{{ employee.salary }}</h2>
+<h2>{{ employee.department }}</h2>
+<h2>{{ employee.manager }}</h2>
+<h2>{{ employee.hire_date }}</h2>
+<h2>{{ employee.phone_number }}</h2>
+<h2>{{ employee.address }}</h2>
+<h2>{{ employee.city }}</h2>
+<h2>{{ employee.state }}</h2>
+<h2>{{ employee.zip_code }}</h2>
+<h2>{{ employee.country }}</h2>
+<h2>{{ employee.joining_date }}</h2>
+{% if employee.image %}
+    <img src="{{ employee.image.url }}" alt="Employee Image" width="200" height="200">
+{% endif %}
+
+<!-- {{ employee.image.url }} it will give the url of the image that is stored in the media folder and we can use this url to display the image in the template. -->

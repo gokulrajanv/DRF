@@ -1,0 +1,36 @@
+<h1>Add Employee</h1>
+<form method="POST" enctype="multipart/form-data" action="{% url 'add_employee' %}">
+    {% csrf_token %}
+    {{ form.as_p }} 
+    <button type="submit">Add Employee</button>
+</form>
+
+
+<!-- {{ form.as_p }}  it is the way to render the form in the template. it will render the form fields as paragraphs. 
+we can also use {{ form }} to render the form fields as a table. we can also use {{ form.field_name }} to render the specific field of the form. -->
+
+<!-- when we edit or create the form post request is sent to the server and the server will process the request and will send the response back to the client.
+so the post request is trigger -->
+
+<!-- when ever we use the form in the template we need to use the csrf_token to prevent the cross 
+ site request forgery attack. it is a security measure to prevent the malicious user from sending the post request to the server. -->
+
+ <!-- when we not configured the csrf_token in the form we will get the error "403 forbidden" and the request will not be processed by the server. so we need to use the csrf_token in the form to prevent this error.
+ and also when we not configured the csrf_token in the form  the bots will come to our website and  it ruin data or submit anything or it can be delete  
+
+ so for all the POST form we need to use the csrf_token in the form to prevent this error and also to prevent the malicious user 
+ from sending the post request to the server. -->
+
+ <!-- POST vs GET request:
+- GET request is used to retrieve the data from the server. it is used to get the data from the server.
+- POST request is used to send the data to the server. it is used to send the data to the server.
+- GET request is used to read the data from the server. it is used to read the data from the server.
+- POST request is used to create or update the data in the server. it is used to create or update the data in the server.
+- GET request is used to delete the data from the server. it is used to delete the data from the server.
+- POST request is used to authenticate the user. 
+- GET request is used to authorize the user. 
+
+" if the user comes and submit the form it is called as post request 
+and if the user comes and just see the form it is called as get request. " -->
+
+ <!-- enctype="multipart/form-data" is used to upload the file to the server. -->
